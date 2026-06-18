@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BaksoLicious - Dasbor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://kit.fontawesome.com/a2d9b6b3c2.js" crossorigin="anonymous"></script>
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="logo"><img src="assets/logo.svg"><span>BaksoLicious</span></div>
+    <nav>
+      <a href="dashboard.html" class="active"><i class="fa fa-home"></i> Dasbor</a>
+      <a href="sales.html"><i class="fa fa-chart-line"></i> Penjualan</a>
+      <a href="expenses.html"><i class="fa fa-receipt"></i> Pengeluaran</a>
+      <a href="inventory.html"><i class="fa fa-boxes"></i> Inventaris</a>
+      <a href="reports.html"><i class="fa fa-file-alt"></i> Laporan</a>
+      <a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> Keluar</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header>
+      <h1>Halo, Selamat Kembali!</h1>
+      <p class="muted">Berikut ringkasan bisnis Anda untuk hari ini.</p>
+    </header>
+
+    <div class="card featured-product" style="text-align: center; padding: 20px; margin-bottom: 20px;">
+      <img src="assets/bakso.svg" alt="Bakso Malang" style="max-width: 100%; height: auto; border-radius: 12px; max-height: 300px;">
+      <h3 style="margin-top: 15px;">Spesial Bakso Malang</h3>
+      <p class="muted">Nikmati kelezatan bakso malang autentik kami yang kaya rasa dan kualitas terbaik</p>
+    </div>
+
+    <section class="cards">
+      <div class="card small">
+        <h4>Total Penjualan</h4>
+        <p class="big" id="totalSales">Rp 1,124,000</p>
+        <p class="muted" id="salesStatus">Naik 12% dari kemarin</p>
+      </div>
+      <div class="card small">
+        <h4>Total Pengeluaran</h4>
+        <p class="big" id="totalExpenses">Rp 520,000</p>
+        <p class="muted" id="expensesStatus">Turun 5% dari kemarin</p>
+      </div>
+      <div class="card small">
+        <h4>Keuntungan</h4>
+        <p class="big" id="profit">Rp 604,000</p>
+        <p class="muted" id="profitStatus">Naik 18% dari kemarin</p>
+      </div>
+      <div class="card small">
+        <h4>Stok Rendah</h4>
+        <p class="big" id="lowStock">2 Item</p>
+        <p class="muted">Perlu restock segera</p>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="card chart-card">
+        <h4>Tren Penjualan - 7 Hari Terakhir</h4>
+        <canvas id="lineChart"></canvas>
+      </div>
+      <div class="card chart-card">
+        <h4>Komposisi Penjualan</h4>
+        <canvas id="donutChart"></canvas>
+      </div>
+    </section>
+
+    <div class="notice card peach">
+      <p>Stok daging sapi dan bumbu kuah bakso mulai berkurang. Silakan restock sesegera mungkin.</p>
+      <button class="btn" id="viewInventory">Lihat Inventaris</button>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

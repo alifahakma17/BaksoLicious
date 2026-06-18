@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pengeluaran - BaksoLicious</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/a2d9b6b3c2.js" crossorigin="anonymous"></script>
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="logo"><img src="assets/logo.svg"><span>BaksoLicious</span></div>
+    <nav>
+      <a href="dashboard.html"><i class="fa fa-home"></i> Dasbor</a>
+      <a href="sales.html"><i class="fa fa-chart-line"></i> Penjualan</a>
+      <a href="expenses.html" class="active"><i class="fa fa-receipt"></i> Pengeluaran</a>
+      <a href="inventory.html"><i class="fa fa-boxes"></i> Inventaris</a>
+      <a href="reports.html"><i class="fa fa-file-alt"></i> Laporan</a>
+      <a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> Keluar</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header>
+      <h1>Entri Pengeluaran</h1>
+      <button class="btn" id="addExpenseBtn">+ Tambah Pengeluaran</button>
+    </header>
+
+    <div class="card form-card" id="expenseFormCard">
+      <div class="row">
+        <div class="col">
+          <label>Tanggal</label>
+          <input type="date" id="expenseDate" />
+          <label>Kategori</label>
+          <select id="expenseCategory">
+            <option>Bahan Baku</option>
+            <option>Operasional</option>
+            <option id="otherCategory">Lainnya</option>
+          </select>
+          <input type="text" id="customCategory" placeholder="Ketik kategori kustom" style="display:none;">
+        </div>
+        <div class="col">
+          <label>Nama Item</label>
+          <input id="expenseName" placeholder="Masukkan nama item">
+          <label>Harga Unit</label>
+          <input type="number" id="unitPrice" min="0">
+        </div>
+        <div class="col">
+          <label>Jumlah</label>
+          <input type="number" id="expenseQty" min="1" value="1">
+          <label>Unit</label>
+          <select id="expenseUnit">
+            <option>Kg</option>
+            <option>Package</option>
+            <option>Board</option>
+            <option>Piece</option>
+            <option id="otherUnit">Lainnya</option>
+          </select>
+          <input type="text" id="customUnit" placeholder="Ketik unit kustom" style="display:none;">
+        </div>
+      </div>
+      <div class="row between">
+        <div class="total-box">Total Pengeluaran: <span id="totalExpense">Rp 0</span></div>
+        <div><button class="btn" id="saveExpense">Simpan Pengeluaran</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Riwayat Pengeluaran</h3>
+      <input placeholder="Cari..." id="searchExpenses" class="search">
+      <table id="expensesTable" class="table">
+        <thead><tr><th>No</th><th>Item</th><th>Kategori</th><th>Qty</th><th>Harga Unit</th><th>Total</th><th>Aksi</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="row between"><h3>Total: <span id="expenseTotal">Rp 0</span></h3></div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/expenses.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

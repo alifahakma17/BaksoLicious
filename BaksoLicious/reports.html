@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Laporan - BaksoLicious</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://kit.fontawesome.com/a2d9b6b3c2.js" crossorigin="anonymous"></script>
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="logo"><img src="assets/logo.svg"><span>BaksoLicious</span></div>
+    <nav>
+      <a href="dashboard.html"><i class="fa fa-home"></i> Dasbor</a>
+      <a href="sales.html"><i class="fa fa-chart-line"></i> Penjualan</a>
+      <a href="expenses.html"><i class="fa fa-receipt"></i> Pengeluaran</a>
+      <a href="inventory.html"><i class="fa fa-boxes"></i> Inventaris</a>
+      <a href="reports.html" class="active"><i class="fa fa-file-alt"></i> Laporan</a>
+      <a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> Keluar</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header>
+      <h1>Laporan Keuangan</h1>
+      <div class="filters">
+        <select id="periodSelect"><option>Harian</option><option selected>Mingguan</option><option>Bulanan</option></select>
+        <input type="date" id="fromDate"> - <input type="date" id="toDate">
+        <button class="btn" id="downloadReport">Unduh Laporan</button>
+      </div>
+    </header>
+
+    <section class="cards">
+      <div class="card small"><h4>Total Penjualan</h4><p class="big" id="repSales">Rp 0</p></div>
+      <div class="card small"><h4>Total Pengeluaran</h4><p class="big" id="repExpenses">Rp 0</p></div>
+      <div class="card small"><h4>Keuntungan Bersih</h4><p class="big" id="repProfit">Rp 0</p></div>
+    </section>
+
+    <div class="card chart-card">
+      <h4>Penjualan vs Pengeluaran</h4>
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="card details">
+      <h4>Detail</h4>
+      <p>Rata-rata Penjualan Harian: <span id="avgSales">Rp 0</span></p>
+      <p>Rata-rata Pengeluaran Harian: <span id="avgExpenses">Rp 0</span></p>
+      <p>Rata-rata Keuntungan Harian: <span id="avgProfit">Rp 0</span></p>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/reports.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

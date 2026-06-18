@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Penjualan - BaksoLicious</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/a2d9b6b3c2.js" crossorigin="anonymous"></script>
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="logo"><img src="assets/logo.svg"><span>BaksoLicious</span></div>
+    <nav>
+      <a href="dashboard.html"><i class="fa fa-home"></i> Dasbor</a>
+      <a href="sales.html" class="active"><i class="fa fa-chart-line"></i> Penjualan</a>
+      <a href="expenses.html"><i class="fa fa-receipt"></i> Pengeluaran</a>
+      <a href="inventory.html"><i class="fa fa-boxes"></i> Inventaris</a>
+      <a href="reports.html"><i class="fa fa-file-alt"></i> Laporan</a>
+      <a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> Keluar</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header>
+      <h1>Entri Penjualan</h1>
+      <button class="btn" id="addSaleBtn">+ Tambah Penjualan</button>
+    </header>
+
+    <div class="card form-card" id="saleFormCard">
+      <div class="row">
+        <div class="col">
+          <label>Tanggal</label>
+          <input type="date" id="saleDate" />
+        </div>
+        <div class="col">
+          <label>Produk</label>
+          <input type="text" id="productSelect" placeholder="Pilih atau ketik produk" list="productList">
+          <datalist id="productList">
+            <option value="Bakso Malang">Bakso Malang</option>
+            <option value="Iced Tea">Iced Tea</option>
+            <option value="Mineral Water">Mineral Water</option>
+          </datalist>
+        </div>
+        <div class="col">
+          <label>Jumlah</label>
+          <input type="number" id="quantity" value="1" min="1">
+        </div>
+        <div class="col">
+          <label>Harga per Item</label>
+          <input type="number" id="pricePer" min="0" placeholder="Masukkan harga">
+        </div>
+      </div>
+      <div class="row between">
+        <div class="total-box">Total Penjualan: <span id="totalSale">Rp 0</span></div>
+        <div>
+          <button class="btn" id="saveSale">Simpan Penjualan</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Riwayat Penjualan</h3>
+      <input placeholder="Cari..." id="searchSales" class="search">
+      <table id="salesTable" class="table">
+        <thead><tr><th>No</th><th>Produk</th><th>Jumlah</th><th>Harga</th><th>Total</th><th>Aksi</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="row between">
+        <h3>Total: <span id="dailyTotal">Rp 0</span></h3>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/sales.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

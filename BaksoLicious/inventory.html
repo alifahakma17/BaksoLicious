@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inventaris - BaksoLicious</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/a2d9b6b3c2.js" crossorigin="anonymous"></script>
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="logo"><img src="assets/logo.svg"><span>BaksoLicious</span></div>
+    <nav>
+      <a href="dashboard.html"><i class="fa fa-home"></i> Dasbor</a>
+      <a href="sales.html"><i class="fa fa-chart-line"></i> Penjualan</a>
+      <a href="expenses.html"><i class="fa fa-receipt"></i> Pengeluaran</a>
+      <a href="inventory.html" class="active"><i class="fa fa-boxes"></i> Inventaris</a>
+      <a href="reports.html"><i class="fa fa-file-alt"></i> Laporan</a>
+      <a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> Keluar</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header>
+      <h1>Inventaris</h1>
+      <button class="btn" id="addItemBtn">+ Tambah Item</button>
+    </header>
+
+    <div class="card">
+      <input placeholder="Cari item..." id="searchInventory" class="search">
+      <table id="inventoryTable" class="table">
+        <thead><tr><th>Nama Item</th><th>Unit</th><th>Stok</th><th>Status</th><th>Aksi</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/inventory.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
